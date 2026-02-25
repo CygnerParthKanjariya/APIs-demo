@@ -1,17 +1,18 @@
 import 'package:api_demo/models/post_model.dart';
-import 'package:api_demo/services/api_service.dart';
+import 'package:api_demo/services/api_get_service.dart';
+import 'package:api_demo/view/post_data/post_data_page.dart';
 import 'package:flutter/material.dart';
 
 import 'detail_page.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class GetData extends StatefulWidget {
+  const GetData({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<GetData> createState() => _GetDataState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _GetDataState extends State<GetData> {
   @override
   void initState() {
     super.initState();
@@ -20,9 +21,23 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("API Demo"), centerTitle: true),
+      appBar: AppBar(
+        title: Text("API Demo"),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PostDataPage()),
+              );
+            },
+            icon: Icon(Icons.arrow_forward_ios),
+          ),
+        ],
+      ),
       body: FutureBuilder<List<PostModel>>(
-        future: ApiService().fetchPosts(),
+        future: ApiGetService().fetchPosts(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(child: CircularProgressIndicator());

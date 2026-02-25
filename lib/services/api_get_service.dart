@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 
 import '../models/post_model.dart';
 
-class ApiService {
+class ApiGetService {
   final String baseUrl = "https://jsonplaceholder.typicode.com/posts";
 
   Future<List<PostModel>> fetchPosts() async {

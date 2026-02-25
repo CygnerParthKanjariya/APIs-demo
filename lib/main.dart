@@ -1,5 +1,5 @@
+import 'package:api_demo/view/get_data/get_data.dart';
 import 'package:flutter/material.dart';
-import 'package:api_demo/view/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: const GetData(),
     );
   }
 }
