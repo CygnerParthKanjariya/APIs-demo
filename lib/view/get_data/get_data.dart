@@ -13,6 +13,7 @@ class GetData extends StatefulWidget {
 }
 
 class _GetDataState extends State<GetData> {
+
   @override
   void initState() {
     super.initState();
