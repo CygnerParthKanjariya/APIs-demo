@@ -1,6 +1,8 @@
-import 'package:api_demo/services/api_post_service.dart';
-import 'package:api_demo/view/put_data/put_data_page.dart';
+
 import 'package:flutter/material.dart';
+
+import '../../services/api_post_service.dart';
+import '../put_data/put_data_page.dart';
 
 class PostDataPage extends StatelessWidget {
   const PostDataPage({super.key});

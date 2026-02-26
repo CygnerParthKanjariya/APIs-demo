@@ -1,5 +1,7 @@
-import 'package:api_demo/services/api_delete_service.dart';
+
 import 'package:flutter/material.dart';
+
+import '../../services/api_delete_service.dart';
 
 class DeleteDataPage extends StatelessWidget {
   const DeleteDataPage({super.key});

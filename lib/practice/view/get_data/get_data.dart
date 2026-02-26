@@ -1,8 +1,9 @@
-import 'package:api_demo/models/post_model.dart';
-import 'package:api_demo/services/api_get_service.dart';
-import 'package:api_demo/view/post_data/post_data_page.dart';
+
 import 'package:flutter/material.dart';
 
+import '../../models/post_model.dart';
+import '../../services/api_get_service.dart';
+import '../post_data/post_data_page.dart';
 import 'detail_page.dart';
 
 class GetData extends StatefulWidget {

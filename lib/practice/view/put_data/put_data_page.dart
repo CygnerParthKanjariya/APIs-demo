@@ -1,7 +1,8 @@
-import 'package:api_demo/view/delete_data/delete_data_page.dart';
+
 import 'package:flutter/material.dart';
 
 import '../../services/api_put_service.dart';
+import '../delete_data/delete_data_page.dart';
 
 class PutDataPage extends StatelessWidget {
   const PutDataPage({super.key});

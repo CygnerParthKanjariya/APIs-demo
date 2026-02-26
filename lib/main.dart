@@ -1,7 +1,11 @@
-import 'package:api_demo/view/get_data/get_data.dart';
+import 'package:api_demo/weather/whether_view/whether_home_page.dart';
+import 'package:firebase_core/firebase_core.dart';
+
 import 'package:flutter/material.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -12,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const GetData(),
+      home: const WeatherHomePage(),
     );
   }
 }
