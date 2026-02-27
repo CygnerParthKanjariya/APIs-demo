@@ -1,5 +1,3 @@
-
-
 import 'dart:convert';
 
 class WeatherModel {
@@ -35,7 +33,11 @@ class WeatherModel {
 
   factory WeatherModel.fromJson(Map<String, dynamic> json) => WeatherModel(
     coord: json["coord"] == null ? null : Coord.fromJson(json["coord"]),
-    weather: json["weather"] == null ? [] : List<WeatherElement>.from(json["weather"]!.map((x) => WeatherElement.fromJson(x))),
+    weather: json["weather"] == null
+        ? []
+        : List<WeatherElement>.from(
+            json["weather"]!.map((x) => WeatherElement.fromJson(x)),
+          ),
     base: json["base"],
     main: json["main"] == null ? null : Main.fromJson(json["main"]),
     visibility: json["visibility"],
@@ -51,7 +53,9 @@ class WeatherModel {
 
   Map<String, dynamic> toJson() => {
     "coord": coord?.toJson(),
-    "weather": weather == null ? [] : List<dynamic>.from(weather!.map((x) => x.toJson())),
+    "weather": weather == null
+        ? []
+        : List<dynamic>.from(weather!.map((x) => x.toJson())),
     "base": base,
     "main": main?.toJson(),
     "visibility": visibility,
@@ -69,37 +73,24 @@ class WeatherModel {
 class Clouds {
   int? all;
 
-  Clouds({
-    this.all,
-  });
+  Clouds({this.all});
 
-  factory Clouds.fromJson(Map<String, dynamic> json) => Clouds(
-    all: json["all"],
-  );
+  factory Clouds.fromJson(Map<String, dynamic> json) =>
+      Clouds(all: json["all"]);
 
-  Map<String, dynamic> toJson() => {
-    "all": all,
-  };
+  Map<String, dynamic> toJson() => {"all": all};
 }
 
 class Coord {
   double? lon;
   double? lat;
 
-  Coord({
-    this.lon,
-    this.lat,
-  });
+  Coord({this.lon, this.lat});
 
-  factory Coord.fromJson(Map<String, dynamic> json) => Coord(
-    lon: json["lon"]?.toDouble(),
-    lat: json["lat"]?.toDouble(),
-  );
+  factory Coord.fromJson(Map<String, dynamic> json) =>
+      Coord(lon: json["lon"]?.toDouble(), lat: json["lat"]?.toDouble());
 
-  Map<String, dynamic> toJson() => {
-    "lon": lon,
-    "lat": lat,
-  };
+  Map<String, dynamic> toJson() => {"lon": lon, "lat": lat};
 }
 
 class Main {
@@ -151,11 +142,7 @@ class Sys {
   int? sunrise;
   int? sunset;
 
-  Sys({
-    this.country,
-    this.sunrise,
-    this.sunset,
-  });
+  Sys({this.country, this.sunrise, this.sunset});
 
   factory Sys.fromJson(Map<String, dynamic> json) => Sys(
     country: json["country"],
@@ -176,12 +163,7 @@ class WeatherElement {
   String? description;
   String? icon;
 
-  WeatherElement({
-    this.id,
-    this.main,
-    this.description,
-    this.icon,
-  });
+  WeatherElement({this.id, this.main, this.description, this.icon});
 
   factory WeatherElement.fromJson(Map<String, dynamic> json) => WeatherElement(
     id: json["id"],
@@ -203,11 +185,7 @@ class Wind {
   int? deg;
   double? gust;
 
-  Wind({
-    this.speed,
-    this.deg,
-    this.gust,
-  });
+  Wind({this.speed, this.deg, this.gust});
 
   factory Wind.fromJson(Map<String, dynamic> json) => Wind(
     speed: json["speed"]?.toDouble(),
@@ -215,9 +193,5 @@ class Wind {
     gust: json["gust"]?.toDouble(),
   );
 
-  Map<String, dynamic> toJson() => {
-    "speed": speed,
-    "deg": deg,
-    "gust": gust,
-  };
+  Map<String, dynamic> toJson() => {"speed": speed, "deg": deg, "gust": gust};
 }
